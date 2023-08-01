@@ -94,6 +94,65 @@ function mainScreen() { // if the widget is off screen then move into the viewab
 
 include("setMenu.js");
 
+
+
+
+
+//===========================================
+// this function edits the widget
+//===========================================
+function editWidget() {
+    //var answer = alert("Editing the widget. Proceed?", "Open Editor", "No Thanks");
+    //if (answer === 1) {
+        //uses the contents of imageEditPref to initiate your default editor
+        performCommand("menu");
+    //}
+
+}
+//=====================
+//End function
+//=====================
+
 //======================================================================================
 // END script functions.js
 //======================================================================================
+
+
+
+
+//=====================
+// function to carry out a command
+//=====================
+function performCommand(method) {
+    var answer;
+
+    if (method === "menu") {
+        runCommandInBg(preferences.imageEditPref.value, "runningTask");
+    } else {
+        print("method "+method);
+        if (system.event.altKey) { // filesystem.open() call
+            if (preferences.openFilePref.value === "") {
+                answer = alert("This widget has not been assigned an alt+double-click function. You need to open the preferences and select a file to be opened. Do you wish to proceed?", "Open Preferences", "No Thanks");
+                if (answer === 1) {
+                    showWidgetPreferences();
+                }
+                return;
+            }
+            filesystem.open(preferences.openFilePref.value);
+        } else {
+            if (preferences.imageCmdPref.value === "") {
+                answer = alert("This widget has not been assigned a double-click function. You need to open the preferences and enter a run command for this widget. Do you wish to proceed?", "Open Preferences", "No Thanks");
+                if (answer === 1) {
+                    showWidgetPreferences();
+                }
+                return;
+            }
+                runCommandInBg(preferences.imageCmdPref.value, "runningTask");
+        }
+    }
+}
+//=====================
+//End function
+//=====================
+
+

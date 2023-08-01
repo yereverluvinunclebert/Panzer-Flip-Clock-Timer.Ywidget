@@ -40,10 +40,10 @@ function menuitem1OnClick() {
 // this function opens the URL for paypal
 //===========================================
 function menuitem2OnClick() {
-    var answer = alert("Help support the creation of more widgets like this, send us a beer! This button opens a browser window and connects to the Paypal donate page for this widget). Will you be kind and proceed?", "Open Browser Window", "No Thanks");
+    var answer = alert("Help support the creation of more widgets like this, send us a coffee! This button opens a browser window and connects to the Kofi donate page for this widget). Will you be kind and proceed?", "Open Browser Window", "No Thanks");
 
     if (answer === 1) {
-        openURL("https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=info@lightquick.co.uk&currency_code=GBP&amount=2.50&return=&item_name=Donate%20a%20Beer");
+                openURL("https://www.ko-fi.com/yereverluvinunclebert");
     }
 }
 //=====================
@@ -119,37 +119,38 @@ function facebookChat() {
 //End function
 //=====================
 
-//========================================================================
-// this function causes finder/explorer to be opened and the file selected
-//========================================================================
+
+
+
+
+//===========================================
+// this function causes explorer to be opened and the file selected
+//===========================================
 function findWidget() {
-    var widgetFullPath;
-    var idx;
 
-    widgetFullPath = system.userWidgetsFolder + "/" + widgetName + ".widget";
+ // temporary development version of the widget
+    var widgetFullPath = convertPathToPlatform(system.userWidgetsFolder + "/" + widgetName);
+    var alertString = "The widget folder is: \n";
+    if (filesystem.itemExists(widgetFullPath)) {
+        alertString += system.userWidgetsFolder + " \n\n";
+        alertString += "The widget name is: \n";
+        alertString += widgetName + ".\n ";
 
-/*  var alertString = "The widget folder is: \n";
-    alertString += system.userWidgetsFolder + " \n\n";
-    alertString += "The widget name is: \n";
-    alertString += widgetName + ".\n ";
-    alert(alertString, "Open the widget's folder?", "No Thanks");
-*/
-    if (filesystem.itemExists(widgetFullPath)) {    // in the "normal" place
+        alert(alertString, "Open the widget's folder?", "No Thanks");
+
         filesystem.reveal(widgetFullPath);
-    } else {                                        // find the Contents folder
+    } else {
         widgetFullPath = resolvePath(".");
-        idx = widgetFullPath.lastIndexOf("/");
-        widgetFullPath = widgetFullPath.substring(0, idx);
-        if (filesystem.itemExists(widgetFullPath)) {
-            filesystem.reveal(widgetFullPath);
-        } else {
-            beep();
-        }
+
+        filesystem.reveal(widgetFullPath);
+        print("widgetFullPath " + widgetFullPath);
     }
 }
 //=====================
 //End function
 //=====================
+
+
 
 //================================================
 // this function creates the onContextMenu handler
@@ -159,19 +160,12 @@ function setmenu() {
         var items = [], mItem, sItem;
 
         mItem = new MenuItem();
-        mItem.title = "Donate a beer with Paypal";
+        mItem.title = "Donate a Coffee with Ko-Fi";
         mItem.onSelect = function () {
             menuitem2OnClick();
         };
         items.push(mItem);
-
-        mItem = new MenuItem();
-        mItem.title = "Donate some sweets with Amazon";
-        mItem.onSelect = function () {
-            menuitem3OnClick();
-        };
-        items.push(mItem);
-
+        
         mItem = new MenuItem();
         mItem.title = "-";
         items.push(mItem);
@@ -216,7 +210,7 @@ function setmenu() {
         mItem.appendChild(sItem);
 
         mItem = new MenuItem();
-        mItem.title = "Display License Agreement...";
+        mItem.title = "Display Licence Agreement...";
         mItem.onSelect = function () {
             displayLicense();
         };
@@ -247,6 +241,15 @@ function setmenu() {
             reloadWidget();
         };
         items.push(mItem);
+
+        if (preferences.imageEditPref.value != "" && debugFlg === "1") {
+                mItem = new MenuItem();
+                mItem.title = "Edit Widget using " + preferences.imageEditPref.value ;
+                mItem.onSelect = function () {
+                    editWidget();
+                };
+                items.push(mItem);
+        }
 
 
         mItem = new MenuItem();

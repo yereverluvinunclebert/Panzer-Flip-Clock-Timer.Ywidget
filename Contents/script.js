@@ -600,10 +600,22 @@ function setFace() {
 //End function
 //=====================
 
-//===============================================================
-// function startup
-//===============================================================
+
+var widgetName = widget.name;
+var debugFlg = "";
+//===========================================
+// this function runs on startup
+//===========================================
 function startup() {
+    debugFlg = preferences.debugflgPref.value;
+    if (debugFlg === "1") {
+        preferences.imageEditPref.hidden=false;
+        preferences.imageCmdPref.hidden=false;
+    } else {
+        preferences.imageEditPref.hidden=true;
+        preferences.imageCmdPref.hidden=true;
+    }
+
 	var target;
 
 	setMode = 0;
