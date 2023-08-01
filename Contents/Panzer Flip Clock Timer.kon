@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget minimumVersion="4.5">
+    <!--
+    Created by Dean Beedell
+
+    Coded by Dean Beedell
+    Visuals added to and enhanced by Dean Beedell
+    Sorted utterly by Harry Whitfield
+    http://lightquick.co.uk
+
+    31 October 2018     Version 1.3
+    -->
+
+    <settings>
+        <setting name="allowCustomObjectAttributes" value="true"/>
+        <setting name="debug" value="off"/>
+    </settings>
+
+    <about-box>
+        <image>Resources/images/about.png</image>
+        <about-version font="arial" color="#000000" vOffset="262" hOffset="330" size="12">
+            <shadow color="#ffffff" vOffset="1" hOffset="0"/>
+        </about-version>
+        <about-text font="arial" color="#000000" vOffset="262" hOffset="360" url="http://www.lightquick.co.uk" data="http://www.lightquick.co.uk" size="12">
+            <shadow color="#ffffff" vOffset="1" hOffset="0"/>
+        </about-text>
+    </about-box>
+
+    <window visible="false" name="mainWindow" alignment="left" width="1000" title="Panzer Flip Clock Timer"
+        onFirstDisplay="mainWindow.hOffset = 10 + screen.availLeft; mainWindow.vOffset = 10 + screen.availTop; "
+        height="1024" shadow="0">
+    </window>
+
+    <window visible="false" name="helpWindow" alignment="left" width="760" title="Panzer Flip Clock Widget HELP" height="630" >
+            <image src = "Resources/images/tank-help-750.png" name = "tankHelp" visible = "true" />
+    </window>
+
+	<!--prefGroup name="general" order="1" icon="Resources/images/general-icon.png" title="General"/-->
+
+
+	<prefGroup name="commands" order="2" icon="Resources/images/commands-icon.png" title="Commands"/>
+
+	<preference hidden="false" description="Enable or Disable tooltips here. Takes effect at next start." name="tooltipPref" group="commands" title="Tooltips:" defaultValue="enabled" type="popup">
+        <option>enabled</option>
+        <option>disabled</option>
+    </preference>
+
+
+	<preference hidden="false" description="Choose the dock format." name="dockFormatPref" group="commands" title="Dock Format:" defaultValue="seconds" type="popup">
+        <option>hours and minutes</option>
+        <option>minutes and seconds</option>
+       <option>seconds</option>
+    </preference>
+
+    <prefGroup name="mouse" order="3" icon="Resources/images/mouse-icon.png" title="Mouse Configuration"/>
+
+	<preference hidden="false" group="mouse" description="The scroll-wheel resizing direction can be determined here." name="MouseWheelPref" title="Mouse Scroll Wheel" defaultValue="up" type="popup">
+        <option>up</option>
+        <option>down</option>
+    </preference>
+
+  	<preference description="With the mouse hovering over each each gauge require CTRL + mouse scroll wheel up/down to resize or just the scroll wheel." name="ctrlResizePref" group="mouse" title="Mouse + CTRL to resize:" defaultValue="required" type="popup">
+    	<option>CTRL required + scrollwheel</option>
+    	<optionValue>CTRL</optionValue>
+    	<option>Just the scrollwheel resize</option>
+    	<optionValue>scrollWheel</optionValue>
+  	</preference>
+
+
+    <prefGroup name="configuration" order="4" icon="Resources/images/config-icon.png" title="Configuration"/>
+
+    <preference  group="configuration" ticks="41" minLength="5" description="Adjust to a percentage of the original size. You can also use Ctrl+Mousewheel."
+        name="clockSize" maxLength="100" title="Clock Size:" defaultValue="30" type="slider">
+        <tickLabel>020</tickLabel>
+        <tickLabel>040</tickLabel>
+        <tickLabel>060</tickLabel>
+        <tickLabel>080</tickLabel>
+        <tickLabel>100</tickLabel>
+    </preference>
+
+	<preference hidden="false" description="Choose the time to be shown in clock mode." name="timeModePref" group="configuration" title="Time Mode:" defaultValue="local" type="popup">
+        <option>local</option>
+        <option>utc</option>
+    </preference>
+
+    <preference hidden="false" description="Choose the display format in clock mode." name="displayHoursPref" group="configuration" title="Display Format:" defaultValue="24-hour" type="popup">
+        <option>12-hour</option>
+        <option>24-hour</option>
+    </preference>
+
+   <preference hidden="false" description="Choose the operating mode." name="clockModePref" group="configuration" title="Operating Mode:" defaultValue="clock" type="popup">
+        <option>clock</option>
+        <option>timer</option>
+    </preference>
+
+    <preference hidden="false" description="Set the countdown target time (hh:mm:ss)." name="targetTimePref" group="configuration" title="Target Time:" defaultValue="00:00:00" type="text"/>
+
+    <preference hidden="false" description="Choose the alarm sound." name="alarmSoundPref" group="configuration" title="Alarm Sound:" defaultValue="G6AUC.wav" type="popup">
+        <option>G6AUC.wav</option>
+    </preference>
+
+    <preference hidden="false" description="Check this box to delete the selected sound. Note that the default sound (G6AUC.wav) cannot be deleted."
+        name="deleteSoundPref" group="configuration" title="Delete Sound" defaultValue="0" type="checkbox"/>
+
+    <preference hidden="false" description="Check this box to switch on the alarm." name="alarmPref" group="configuration" title="Sound Alarm" defaultValue="0" type="checkbox"/>
+
+    <preference hidden="false" group="configuration" description="This widget makes sounds by default - you can enable or disable the sounds as you require." name="soundPref" title="Sound Control" defaultValue="enabled" type="popup">
+        <option>enabled</option>
+        <option>disabled</option>
+    </preference>
+
+    <preference hidden="true" group="configuration" description="Check this box if you don't want to see the License Conditions again." name="licenseHide" title="Don't Show License Again" defaultValue="0" type="checkbox"/>
+
+    <preference hidden="true" group="configuration" ticks="29" minLength="1" description="Adjust to determine gauge sampling frequency (seconds)."
+        name="sampleIntervalPref" maxLength="30" title="Sampling Interval:" defaultValue="1" type="slider">
+        <tickLabel>1</tickLabel>
+        <tickLabel>15</tickLabel>
+        <tickLabel>30</tickLabel>
+    </preference>
+
+
+    <!--prefGroup name="gauge" order="5" icon="Resources/images/gauge-icon.png" title="Gauges"/-->
+
+
+    <prefGroup name="timepieceposition" order="6" icon="Resources/images/earth.png" title="Position"/>
+
+    <preference name="widgetHideModePref">
+        <title>Aspect Ratio Hidden Mode</title>
+        <type>popup</type>
+        <option>landscape</option>
+        <option>portrait</option>
+        <option>none</option>
+        <defaultValue>none</defaultValue>
+        <hidden>false</hidden>
+        <group>timepieceposition</group>
+        <description>Tablets only. Don't fiddle with this unless you know what you are doing. Here you can choose whether the widget is hidden by default in either landscape or portrait mode or not at all. This allows you to have certain widgets that do not obscure the screen in one mode or another. If you accidentally set it so you can't find it on screen - then simply choose 'show widget' on the widget dock and then change the setting here to none.</description>
+    </preference>
+
+    <preference hidden="false" group="timepieceposition" name="widgetLockPercentagePref"  description="Tablets only. The widget can be positioned proportionally when switching between portrait/landscape. If you want to enable this, disable the options below." title="Widget Position by Percentage:" defaultValue="disabled" type="popup">
+        <option>enabled</option><optionValue>enabled</optionValue>
+        <option>disabled</option><optionValue>disabled</optionValue>
+    </preference>
+
+    <preference hidden="false" group="timepieceposition" name="widgetLockLandscapeModePref" title="Widget Locked in Landscape:" defaultValue="disabled" type="popup">
+        <option>enabled</option><optionValue>enabled</optionValue>
+        <option>disabled</option><optionValue>disabled</optionValue>
+    </preference>
+
+    <preference hidden="false" group="timepieceposition" name="widgetLockPortraitModePref"  description="The widget can be locked into a certain position when in landscape/portrait mode, it ensures that the widget always appears where you want it to. Using the fields below, you can assign a default x/y position for both Landscape or Portrait mode. When the widget is locked in place using the locking pin, this value is set automatically." title="Widget Locked in Portrait:" defaultValue="disabled" type="popup">
+        <option>enabled</option><optionValue>enabled</optionValue>
+        <option>disabled</option><optionValue>disabled</optionValue>
+    </preference>
+
+    <preference hidden="false" group="timepieceposition"  name="landscapeHoffsetPref" title="Landscape Hoffset/Left X pos" type="text"/>
+
+    <preference hidden="false" group="timepieceposition"  name="landscapeVoffsetPref" title="Landscape Yoffset/top Y pos" type="text"/>
+
+    <preference hidden="false" group="timepieceposition"  name="portraitHoffsetPref" title="Portrait Hoffset/Left X pos" type="text"/>
+
+    <preference hidden="false" group="timepieceposition" description="" name="portraitVoffsetPref" title="Portrait Yoffset/top Y pos" type="text"/>
+
+
+    <preference name="hLocationPercPref">
+        <title>Widget horizontal location</title>
+        <type>text</type>
+        <hidden>true</hidden>
+        <description>The widget's horizontal location stored in %.</description>
+    </preference>
+
+    <preference name="vLocationPercPref">
+        <title>Widget vertical location</title>
+        <type>text</type>
+        <hidden>true</hidden>
+        <description>The widget's vertical location stored in %.</description>
+    </preference>
+
+    <preference name="hLocationPref">
+        <title>Widget horizontal location</title>
+        <type>text</type>
+        <hidden>true</hidden>
+        <description>The widget's horizontal location stored in pixels.</description>
+    </preference>
+
+    <preference name="vLocationPref">
+        <title>Widget vertical location</title>
+        <type>text</type>
+        <hidden>true</hidden>
+        <description>The widget's vertical location stored in pixels.</description>
+    </preference>
+
+    <script src="script.js"/>
+</widget>

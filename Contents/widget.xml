@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+    <name>Panzer Flip Clock Timer</name>
+    <version>1.4</version>
+    <author name="Dean Beedell" />
+    <image usage="security" src="Resources/images/security.png"/>
+    <image usage="dock" src="Resources/images/dock.png"/>
+    <platform minVersion="4.5" />
+    <copyright>© 2012-2018 Dean Beedell and Harry Whitfield</copyright>
+    <description>The Konfabulator Panzer Flip Clock and Timer widget, a dieselpunk design for the desktop.</description>
+    <security>
+        <filesystem>full</filesystem>
+        <http>all</http>
+        <applescript>true</applescript>
+        <command>true</command>
+        <hotkey>false</hotkey>
+    </security>
+</metadata>
