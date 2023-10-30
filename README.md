@@ -4,6 +4,7 @@ Steampunk Desktop Flip Clock widget, written in Javascript and XML for the Yahoo
 Widget (Konfabulator) Engine. Created for XP, Vista, Win7, 8, 10+ as well as the 
 Apple Mac.
 
+![panzer-flipflop-clock-all01](https://github.com/yereverluvinunclebert/Panzer-Flip-Clock-Timer.Ywidget/assets/2788342/cb2a94cf-23a0-4aee-9272-f95734a91237)
 
 An dieselpunk Panzer-style Clock widget - I created as part of a group of Panzer-style 
 widgets that I had previously created for the World of Tanks and War Thunder 
@@ -12,6 +13,7 @@ Functional and gorgeous at the same time. The graphics are my own, I took origin
 inspiration from a clock face by Italo Fortana. The code was created with some solid 
 help from Harry Whitfield. 
 
+![panzer-flipflop-desktop01](https://github.com/yereverluvinunclebert/Panzer-Flip-Clock-Timer.Ywidget/assets/2788342/2669bfc0-55b9-48a2-91a9-24aa98395eb8)
 
 Right clicking will bring up a menu of options. Double-clicking on the widget will 
 cause a personalised Windows application to fire up. The first time you run it 
@@ -25,6 +27,8 @@ Note: All javascript widgets need an engine to function, in this case the widget
 the Yahoo Widget Konfabulator engine. The engine interprets the javascript and 
 creates the widget graphics according to the XML description and using the images you 
 provide. 
+
+![panzer-flip-clock-help](https://github.com/yereverluvinunclebert/Panzer-Flip-Clock-Timer.Ywidget/assets/2788342/faac085f-34fc-4a4a-bb38-77cc3b9ab578)
 
 This widget was created with the serious coding skills of Harry Whitfield. I 
 supplied the graphics, the original code, the concept and idea and steered the 
