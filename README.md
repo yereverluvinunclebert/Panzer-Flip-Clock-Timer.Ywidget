@@ -1,10 +1,12 @@
 # Panzer-Flip-Clock-Timer.Ywidget
- 
+
+![security](https://github.com/yereverluvinunclebert/Panzer-Flip-Clock-Timer.Ywidget/assets/2788342/06b9997c-2a5c-4f7d-8afd-651d909888d6)
+
 Steampunk Desktop Flip Clock widget, written in Javascript and XML for the Yahoo 
 Widget (Konfabulator) Engine. Created for XP, Vista, Win7, 8, 10+ as well as the 
 Apple Mac.
 
-![panzer-flipflop-clock-all01](https://github.com/yereverluvinunclebert/Panzer-Flip-Clock-Timer.Ywidget/assets/2788342/cb2a94cf-23a0-4aee-9272-f95734a91237)
+![panzer-flipflop-clock-all01](https://github.com/yereverluvinunclebert/Panzer-Flip-Clock-Timer.Ywidget/assets/2788342/1a6ce599-9ba0-4f6c-ac42-25b0272b9251)
 
 An dieselpunk Panzer-style Clock widget - I created as part of a group of Panzer-style 
 widgets that I had previously created for the World of Tanks and War Thunder 
@@ -13,7 +15,7 @@ Functional and gorgeous at the same time. The graphics are my own, I took origin
 inspiration from a clock face by Italo Fortana. The code was created with some solid 
 help from Harry Whitfield. 
 
-![panzer-flipflop-desktop01](https://github.com/yereverluvinunclebert/Panzer-Flip-Clock-Timer.Ywidget/assets/2788342/2669bfc0-55b9-48a2-91a9-24aa98395eb8)
+![panzer-flipflop-desktop01](https://github.com/yereverluvinunclebert/Panzer-Flip-Clock-Timer.Ywidget/assets/2788342/59286164-bd01-45a4-a9e1-a7f84de20e68)
 
 Right clicking will bring up a menu of options. Double-clicking on the widget will 
 cause a personalised Windows application to fire up. The first time you run it 
@@ -28,7 +30,8 @@ the Yahoo Widget Konfabulator engine. The engine interprets the javascript and
 creates the widget graphics according to the XML description and using the images you 
 provide. 
 
-![panzer-flip-clock-help](https://github.com/yereverluvinunclebert/Panzer-Flip-Clock-Timer.Ywidget/assets/2788342/faac085f-34fc-4a4a-bb38-77cc3b9ab578)
+![panzer-flip-clock-help](https://github.com/yereverluvinunclebert/Panzer-Flip-Clock-Timer.Ywidget/assets/2788342/e7b416d8-32f3-4350-9941-7aca9e5b64ff)
+
 
 This widget was created with the serious coding skills of Harry Whitfield. I 
 supplied the graphics, the original code, the concept and idea and steered the 
@@ -36,6 +39,8 @@ widget toward its final goal. I also tested the widget, added extra
 functionality and fettled the code for release. Harry built the core 
 functionality to my spec. but just did it far better than I would ever have 
 done!
+
+![gauge-icon](https://github.com/yereverluvinunclebert/Panzer-Flip-Clock-Timer.Ywidget/assets/2788342/f16cb855-0a0c-4db4-83a1-89b73df689a2)
  
 Built using: 
 
@@ -96,6 +101,7 @@ Tested on :
  menubar item should appear. Widgets can then be started from the menubar or by 
  double-clicking on the KON file in the usual way.
  
+![about](https://github.com/yereverluvinunclebert/Panzer-Flip-Clock-Timer.Ywidget/assets/2788342/4931c73a-fcd7-4f77-990a-4473d3a38323)
 
  LICENCE AGREEMENTS:
  
